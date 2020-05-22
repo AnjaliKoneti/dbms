@@ -1,0 +1,1216 @@
+Create a User table with following columns
+user_id - an integer to unique identify
+first_name - string value of max length 200 to store the first name and can not be empty.
+last_name -string value of max length 200 to store the last name and can not be empty.
+address - string value of max length 300 to store the address and can not be empty.
+phone_number - phone number must be integer and cannot be empty
+Note: Use exact field names
+
+# query.py
+Q1="Write your query here"
+...
+Create a table to store Post data. We need to store the following data for each of the post
+
+user_id - an integer - id of the user who created this post
+
+post_id - an integer to uniquely identify a Post. Whenever a post is created post_id should be automatically set to a unique integer.
+
+post_content - string value of max length 500 to store the post content.
+
+Note :
+
+Use exact field names
+On deleting a particular user corresponding post posted by user should be deleted
+...
+Q2="Write your query here"
+...
+Create a user tony stark with the following data
+user_id - 1
+first_name: tony
+last_name : stark
+address : new york
+phone_number : 1234567890
+...
+Q3="Write your query here"
+...
+Create another user John wick with the following data
+user_id : 2
+first_name: john
+last_name : wick
+address: la
+phone_number : 987654321
+...
+Q4="Write your query here"
+...
+Create a post for user with id 1 with post_content as my first post
+...
+Q5="Write your query here"
+...
+Write a query to get all users in User table.
+...
+Q6="Write your query here"
+...
+Write a query to get first_name and last_name of all users from User table
+...
+Q7="Write your query here"
+...
+
+Write a query to update Tony stark name to
+first_name = thor
+last name = ragnarok
+...
+Q8="Write your query here"
+...
+
+Write a query to create a post user with id 2 with “My Second Post” as post_content
+...
+Q9="Write your query here"
+...
+
+Delete John wick in User table
+...
+Q10="Write your query here"
+...
+
+Delete the post table
+...
+Q11="Write your query here"
+...
+
+--------------------------------------------------------------------------------------------------------
+
+Assignment 2 ::
+
+Schema for the tables that are to be used for following queries
+
+ Actor (  
+	 id integer PRIMARY KEY,
+	 fname varchar(250),  
+	 lname varchar(250), 
+	 gender varchar(10) 
+ );
+
+ Movie(  
+	 id integer PRIMARY KEY, 
+	 name varchar(250), 
+	 year integer, 
+	 rank integer
+ );
+	
+ Director(  
+	 id integer PRIMARY KEY, 
+	 fname varchar(250), 
+	 lname varchar(250)
+ );
+
+
+Get top 10 movies when sorted in descending order of rank
+...
+Q1="Write your query here"
+...
+
+
+Get top 10 movies in descending order of rank skipping first 10.
+...
+Q2="Write your query here"
+...
+
+Get all the movie names which are released after 2004
+...
+Q3="Write your query here"
+...
+
+
+Get names of all movies which have rank less than 1.1
+...
+Q4="Write your query here"
+...
+
+Get all the movies which released in 2004, 2005, 2006
+...
+Q5="Write your query here"
+...
+
+Get name and year of releases for the movies which start with Harry in its name
+...
+Q6="Write your query here"
+...
+
+
+Get all the actors whose first name is Christin and last name is not Watson
+...
+Q7="Write your query here"
+...
+
+Get all the actors whose first name is Woody and last name is Watson
+...
+Q8="Write your query here"
+...
+
+
+Get name of movies which are released in the year 1990 and have rank equal to 5
+...
+Q9="Write your query here"
+...
+
+Get all the actors whose first_name is Christin or last_name is Watson
+...
+Q10="Write your query here"
+...
+
+Get all the movie names which are released between 2003 and 2005 (inclusion of 2003 and 2005)
+...
+Q11="Write your query here"
+...
+
+Get distinct years in which movies are released in ascending order
+...
+Q12="Write your query here"
+...
+
+Get top 10 actors whose
+first_name is Christin or last name is Watson
+And gender is Male(M)
+in alphabetically sorted by first name.
+...
+Q13="Write your query here"
+...
+
+
+--------------------------------------------------------------------------------------------------------
+
+Assignment 3 ::::
+
+Schema for the tables that are to be used for following queries
+
+ Actor (  
+	 id integer PRIMARY KEY,
+	 fname varchar(250),  
+	 lname varchar(250), 
+	 gender varchar(10) 
+ );
+
+ Movie(  
+	 id integer PRIMARY KEY, 
+	 name varchar(250), 
+	 year integer, 
+	 rank integer
+ );
+	
+ Director(  
+	 id integer PRIMARY KEY, 
+	 fname varchar(250), 
+	 lname varchar(250)
+ );
+ 
+
+
+
+Get the total number of movies that are released in year 1991
+Q1="Write your query here"
+...
+
+
+Get the least rank for a movies
+...
+Q2="Write your query here"
+...
+
+
+Get the maximum rank for movies that are released in year 2000
+...
+Q3="Write your query here"
+...
+
+
+Get the average ranking for movies that are released in year 2000
+...
+Q4="Write your query here"
+...
+
+Find the total number of unique years in the imdb database given to you.
+...
+Q5="Write your query here"
+...
+
+
+Find the time period that this database covers. (start year, end year)
+...
+Q6="Write your query here"
+...
+
+-----------------------------------------------------------------------------------------------------------
+
+
+Assignment 4 ::::
+
+Schema for the tables that are to be used for following queries
+
+ Actor (  
+	 id integer PRIMARY KEY,
+	 fname varchar(250),  
+	 lname varchar(250), 
+	 gender varchar(10) 
+ );
+
+ Movie(  
+	 id integer PRIMARY KEY, 
+	 name varchar(250), 
+	 year integer, 
+	 rank integer
+ );
+	
+ Director(  
+	 id integer PRIMARY KEY, 
+	 fname varchar(250), 
+	 lname varchar(250)
+ );
+ 
+
+
+
+Get the total number of movies that are released in the year 2002, Where the movie name starts with "Ha" and movie rating is greater than 2
+Q1="Write your query here"
+...
+
+Get the maximum rank among the movies whose names start with "Autom" and released in the year 1983 or 1994
+...
+Q2="Write your query here"
+...
+
+
+Get the total number of actors whose
+gender is "M"(male) and
+the fname ends with ei" or the lname starts with "ei"
+...
+Q3="Write your query here"
+...
+
+Get the average ranking of all the movies
+that are released in 1993 or 1995 or 2000 &
+their rank is greater than or equal to 4.2.
+the column name of the result should be average_rank_of_movies instead of AVG(rank)
+
+...
+Q4="Write your query here"
+...
+
+
+Get the sum of ranks of all the movies whose
+movie name contains "Harry" and
+released between 1981 and 19984 (both inclusive) and
+its rank is less than 9
+...
+Q5="Write your query here"
+...
+
+
+Get the year in which a movie got rank = 5 for the first time.
+...
+Q6="Write your query here"
+...
+
+
+Count the total number of female actors in the database and also include the actors which have same first and last names.
+...
+Q7="Write your query here"
+...
+
+
+Get 100 distinct fnames of actors whose lname ends with "ei" and the result should be in the ascending order of actor first name
+...
+Q8="Write your query here"
+...
+
+
+Skip the first 10 rows and get 25 movies that are released in the year (2001, 2002, 2005, 2006) and the output should have column movie_title instead of name.
+...
+Q9="Write your query here"
+...
+
+# Output Format:
+id, movie_title, year
+1, Harry Potter, 2004
+...
+Get the first 5 distinct lnames of directors whose fname is in ("Yeud", "Wolf", "Vicky). The result should be in the ascending order of director's lname.
+...
+Q10="Write your query here"
+...
+
+
+--------------------------------------------------------------------------------------------------------------
+
+Assignment 5 ::::
+
+
+Schema for the tables that are to be used for following tasks
+
+ Actor (  
+	 id integer PRIMARY KEY,
+	 fname varchar(250),  
+	 lname varchar(250), 
+	 gender varchar(10) 
+ );
+
+ Movie(  
+	 id integer PRIMARY KEY, 
+	 name varchar(250), 
+	 year integer, 
+	 rank integer
+ );
+	
+ Director(  
+	 id integer PRIMARY KEY, 
+	 fname varchar(250), 
+	 lname varchar(250)
+ );
+
+Cast(
+        pid integer,
+        mid integer,
+        role varchar(200)
+    );
+
+MovieDirector(
+        did integer,
+        mid integer
+    );
+
+Cast stores the cast data i.e the actors who acted in each movie.
+
+pid - actor id
+mid - movie id
+role - role of the actor with id equal to pid in movie with id equal mid
+Similar to Cast, MovieDirector stores movie directors data i.e the directors for each movie
+
+# Tasks
+# Task 1
+Calculate the number of movies(no_of_movies), each actor(actor_id) has acted.
+
+Q1="Write your query here"
+...
+
+# Output Format
+actor_id    no_of_movies
+    1           10
+    2           7
+....
+# Task 2
+Calculate the number of movies released in each year, results should be in the ascending order of year.
+
+...
+Q2="Write your query here"
+...
+# Output Format
+year    count
+2001     10
+2002     7
+....
+# Task 3
+Calculate the average rank of movies(avg_rank) for each year, return year and avg_rank for years in which atleast 10 movies are released. Results should be in the descending order of year.
+
+...
+Q3="Write your query here"
+...
+# Output Format
+year    avg_rank
+2010        9
+...
+# Task 4
+Calculate the maximum rank of movies(max_rank) for each year, return year and max_rank. Results should be in the ascending order of year.
+
+...
+Q4="Write your query here"
+...
+
+# Output Format
+year    max_rank
+2010        9
+...
+# Task 5
+Calculate the number of movies whose name starts with "a" and have the same rank, return rank, and the number of movies for that rank.
+
+...
+Q5="Write your query here"
+...
+# Output Format
+rank    no_of_movies
+  9        111
+...
+
+----------------------------------------------------------------------------------------------------------------------
+
+Assignment 6::::
+
+Write your queries query.py
+
+Query for each question is to be assigned to a variable in the above python file. Variables for each question are specific individually.
+
+Get fname and lname all the actors casted in movie_id = 12148
+
+Q1="Write your query here"
+...
+
+Count the number of movies in which actor “Harrison (I) Ford” acted
+first name: “Harrison (I)”
+last name: “Ford”
+...
+Q2="Write your query here"
+...
+
+
+Get all the distinct actors ids who acted in all movie whose title starts with Young Latin Girls.
+...
+Q3="Write your query here"
+...
+
+
+How many distinct actors have acted in any movie between 1990 and 2000 (both inclusive).
+...
+Q4="Write your query here"
+...
+
+
+
+------------------------------------------------------------------------------------------------------------------------------
+
+
+Assignment 7 ::
+
+#Questions
+Find the number of movies that are released before 2000 [3 points]
+
+Q1="Write your query here"
+
+Get the average ranking for movies which are released in year 1991
+
+Sample Output Format:
+
+6.912...
+
+Query Submission Format:
+
+Q2="Write your query here"
+
+
+Get the minimum rank of all the movies which are released in the year 1991 [3 points]
+
+Sample Output Format:
+
+1.2
+
+Query Submission Format:
+
+Q3="Write your query here"  
+  
+
+Get fname and lname of all the actors of movie whose id is equal to 27 . [3 points]
+
+Sample Output Format:
+
+tony stark
+captain america
+
+Query Submission Format:
+
+Q4="Write your query here"
+
+Count the number of movies in which actor “Jon Dough” has acted. [3 points]
+Assume that you can uniquely identify him using the following conditions
+fname : “Jon”
+lname : “Dough”
+
+Sample Output Format:
+
+10
+
+Query Submission Format:
+
+Q5="Write your query here"
+
+
+Get names of all movies in “Young Latin Girls” series which are released between 2003 and 2006 [3 points]
+
+Note: Movies whose name starts with “Young Latin Girls” can be treated as movies that belong to the “Young Latin Girls” series
+
+Q6="Write your query here"
+Get fname and lname of all directors (unique directors) who directed atleast one movie in Star Trek series [5 points]
+
+Note: You can assume that a movie is in Star Trek movie series if it has “Star Trek” at the beginning of its name
+
+Q7="Write your query here"
+Find all movies for which Jackie Chan is both director and actor, Your query results should be in ascending order of name of the movie [5 points]
+
+Note: You can assume that we can identify Jackie Chan uniquely by
+fname: Jackie (I) & lname: Chan
+
+Q8="Write your query here"
+List fname and lname of directors who directed at least 4 movies which released in 2001. Your query should return results in the following order [5 points]
+
+ascending on fname
+and then descending on lname
+Q9="Write your query here"   
+
+Write a query to get the number of male and female actors in our database. In the ascending order of gender [5 points]
+
+Sample Output Format:
+
+F 40
+M 59
+Query Submission Format:
+
+Q10="Write your query here"
+
+Write a query to get movie pairs in which both the movies are released in the same year and have same rating. Your query should result in 100 entries and sorted in ascending order of first movie name. [10 points]
+Return only distinct pairs i.e pairs (Movie1, Movie2) and (Movie2, Movie1) should be considered as same.
+
+Sample Output Format:
+
+MovieName1 MovieName2 8 2000 
+MovieName3 MovieName4 8 2001 
+
+Query Submission Format:
+
+Q11="Write your query here"    
+Rank of an actor for a given year is the average of ranks of all the movies he/she is casted in and released in that year. Your query should result fname, year and the rank of the actors. Your query should result in only 100 entries when ordered as following [10 points]
+
+ascending order on actor fname and then
+descending order on year
+Sample Output Format:
+
+Actor1 2001 9 
+Actor1 2000 8
+
+Query Submission Format:
+
+Q12="Write your query here"
+Find the top Actor - Directors pair.
+The score for an Actor - Director pair is the average of ranks of movies which the director has directed and which the actor has acted. Consider only Actor - Director pair if they have worked together for at least 5 movies. [10 points]
+
+Your query should return fname of the actor, fname of the director and the score.
+
+Your query should return first 100 such pairs when ordered in
+
+descending order of score and then
+ascending order of director fname and then
+descending order of actor fname
+Sample Output Format:
+
+Actor1 Director1 10.0
+Actor2 Director2 8.0
+
+Query Submission Format:
+
+Q13="Write your query here"
+
+
+--------------------------------------------------------------------------------------------------------------------
+
+Assignment 8:::
+
+#Questions
+Get all Budding directors - Find all directors who didn’t direct any film before 2000 and have directed at least one film after 2000. Your query should result in id and fname of the director in ascending order of id.
+
+Sample Output Format:
+
+1 Director1
+2 Director2
+
+Query Submission Format:
+
+Q1="Write your query here"
+
+
+Find the best ranked movie for each director. Incase of more than one movie select the first one when sorted in ascending order of movie name.
+Your query should return fname and name of the movie. Your query should return only 100 entries
+
+Sample Output Format:
+
+Director1 Movie1
+Director2 Movie2
+
+Query Submission Format:
+
+Q2="Write your query here"
+
+List 100 actors who didn't act in any movie between 1990 and 2000. Your query should return only 100 unique actors when sorted by id in descending order.
+
+Q3="Write your query here"
+
+-----------------------------------------------------------------------------------------------------------
+
+
+Assignment 9 ::
+
+
+
+
+Tables:
+
+Team
+Match
+Player
+MatchTeamDetails:
+MatchCaptain
+GoalDetails
+Coding Guidelines:
+
+Write your queries in query.py
+Query for each question is to be assigned to a variable in the above metioned python file.
+# Query Submission Guideline
+Assign your query string to a variable with name have the following format
+
+Q{question Number}="Write your query here"
+
+Below are variable names for question 1 and 2 queries
+
+Q1="Write your query here"
+Q2="Write your query here"
+
+#Questions
+# Task 1
+Get the average age of all the players in the database - [2 Points]
+
+# Sample Output Format
+3.245989213123125123
+
+# Task 2
+Get match_no and play_date of all the matches which have more than 50000 audience - [2 Points]
+Your query should return match_no, play_date in ascending order of match_no.
+
+# Sample Output Format
+1	2016-06-11
+2	2016-02-12
+3	2018-02-01
+
+# Task 3
+Get the team_id and the number of matches the team has won for each team in the database (Only consider teams which have played atleast one match) - [2 Points]
+Your query should return in the descending order of the number of matches won and then in the ascending ordering of team_id
+
+# Sample Output Format
+10012	4
+10013	3
+10014	0
+
+# Task 4
+Get the match_no, play_date for all matches whose stop1_sec is greater than average stop1_sec across all matches - [3 Points]
+Your query should return match_no and play_date in descending order of match_no
+
+# Sample Output Format
+  3	2016-06-11
+  2	2016-04-11
+  1	2016-02-11
+
+# Task 5
+Get the team names and their captain names for all the matches in the database - [3 Points]
+Your query should return match_no, team name and the captain name in ascending order of match_no and team name
+
+# Sample Output Format
+1	UK	Rob
+1	USA	Mike
+3	UK	John
+
+# Task 6
+Get the name of the player_of_the_match and his/her jersey_no for all the matches in the database - [3 Points]
+Your query should result in match_no, player name and his/her jersey_no in ascending order of match_no
+
+# Sample Output Format
+ 1	Mike	6
+ 2	Rob	8
+ 3	Pike	1
+
+# Task 7
+Get the team name and the average age of players in that team for all the teams whose average age is greater than 26 - [3 Points]
+Your query should result in team name and average_age in ascending order of name
+
+# Sample Output Format
+UK	38.3
+USA	27.5
+
+# Task 8
+Get the total number of goals scored by all players whose age is less than or equal to 27 - [3 Points]
+Your query should return player name, jersey_no, age and the number of goals scored in the descending order of the number of goals and then ascending order of player name. (Consider only the players who scored atleast one goal)
+
+# Sample Output Format
+Rob	4	23	8
+Pike	3	21	6
+John	1	22	3
+
+# Task 9
+Get the percentage of goals each team has scored. - [5 Points]
+percentage of goals scored by a team = (total number of goals scored by the team across all matches * 100) / total number of goals scored by all the teams acrosss all matches
+Your query should return the team_id and the percentage of goals. (Consider only the teams which scored atleast one goal)
+
+# Sample Output Format
+   1	9.41234..
+   2	30.58766..
+   3	60.0
+
+# Task 10
+Get the average of total number of goals scored by a team across all the matches - [5 Points]
+
+# Sample Output Format
+1.8
+
+# Task 11
+Get all the players who didn’t score in any of the matches. - [5 Points]
+Your query should return player_id, name and date_of_birth in the ascending order of player_id.
+
+# Sample Output Format
+1	Rob	1989-03-10	 
+2	Mike	1989-03-10	 
+3	Bob	1989-03-10	 
+
+# Task 12
+Get the audience count and the difference between the audience count and the teams average audience count for all matches in the database. - [7 Points]
+Your query should return team_name, match_no, audience and the difference beteween the audience and the average audience across all matches played by that team in the ascending order of match_no
+
+# Sample Output Format
+USA	1	300000   12340
+UK	2	123123  12340
+Germany	3	123523  12340
+
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+Assignment 10:::
+
+
+Tables:
+
+Team
+Match
+Player
+MatchTeamDetails:
+MatchCaptain
+GoalDetails
+Coding Guidelines:
+
+Write your queries in query.py
+Query for each question is to be assigned to a variable in the above metioned python file.
+# Query Submission Guideline
+Assign your query string to a variable with name have the following format
+
+Q{question Number}="Write your query here"
+
+Below are variable names for question 1 and 2 queries
+
+Q1="Write your query here"
+Q2="Write your query here"
+
+#Questions
+# Task 1
+Find all the players in the database who acted as captain for at-least one match and didn't make at least one goal.
+
+# Sample Output Format
+player_id|team_id|jersey_no|name|date_of_birth|age
+160140|1207|1|Hugo Lloris|1986-12-26|29
+160349|1216|6|Vlad Chiriches|1989-11-14|26
+160013|1201|5|Lorik Cana|1983-07-27|32
+160467|1221|2|Stephan Lichtsteiner|1984-01-16|32
+160401|1218|3|Martin Skrtel|1984-12-15|31
+..............
+# Task 2
+Find the number of games played by each team
+
+# Sample Output Format
+team_id|no_of_games
+1201|3
+1202|3
+1203|5
+1204|4
+1205|3
+........
+# Task 3
+Find the average goal score of each team. The average goal score for a team is the total number of goals divided by the total number of members in the team.
+
+# Sample Output Format
+team_id|avg_goal_score
+1201|0.0434782608695652
+1202|0.0434782608695652
+1203|0.391304347826087
+1204|0.217391304347826
+1205|0.0869565217391304
+.......
+# Task 4
+For each captain find the number of matches he/she has been captain to that match. The result should have captain and no_of_times_captain columns as shown below.
+
+# Sample Output Format
+captain|no_of_times_captain
+160004|2
+160013|1
+160028|3
+160062|5
+160076|4
+...........
+# Task 5
+Find the number of players(no_players) who are captain and also awarded the player of the match for the same match.
+
+# Sample Output Format
+no_players
+6
+# Task 6
+Find the distinct player ids who are captain for atleast one match and didn't get the player of the match title for even a single match.
+
+# Sample Output Format
+captain
+160004
+160004
+........
+# Task 7
+Find the number of matches played in each month. Your query should return Month and no_of_matches in the descending order of no_of_matches
+
+# Sample Output Format
+month|no_of_matches
+06|44
+...
+# Task 8
+Find the jersey number and the number of captains use it. Your query should return jersey_no and no_captains in the descending order of no_captains and jersey_no.
+
+# Sample Output Format
+jersey_no|no_captains
+1|17
+....
+# Task 9
+Find the average of the audience for each player. In the descending order of avg_audience and player_id.
+
+# Sample Output Format
+player_id|avg_audience
+160001|49075.66
+160002|145675.123
+160003|97234.66
+160004|72345.852
+160005|91203.123
+...
+# Task 10
+Calculate the average age of players for each team.
+
+# Sample Output Format
+team_id|AVG(age)
+1201|27.0869565217391
+1202|27.2173913043478
+1203|25.9130434782609
+1204|26.304347826087
+1205|28.7391304347826
+......... 
+
+# Task 11
+Calculate the average age of all the captains in the database.
+
+# Sample Output Format
+avg_age_of_captains
+30.6078431372549	 
+
+# Task 12
+Find the month and the number of players born in that month in the descending order of no_of_players and month.
+
+# Sample Output Format
+month|no_of_players
+01|59
+....
+# Task 13
+Find the captain id and the number of matches he/she has won(no_of_wins). Your Query should return captain and no_of_wins in the descending order of no_of_wins.
+
+# Sample Output Format
+captain|no_of_wins
+160140|5
+160163|4
+160322|4
+160539|4
+160062|3
+.........
+
+
+------------------------------------------------------------------------------------------------------------
+
+Assignment 11 :::
+
+
+Schema for the tables that are to be used for following tasks
+
+ Actor (  
+	 id integer PRIMARY KEY,
+	 fname varchar(250),  
+	 lname varchar(250), 
+	 gender varchar(10) 
+ );
+
+ Movie(  
+	 id integer PRIMARY KEY, 
+	 name varchar(250), 
+	 year integer, 
+	 rank integer
+ );
+	
+ Director(  
+	 id integer PRIMARY KEY, 
+	 fname varchar(250), 
+	 lname varchar(250)
+ );
+
+Cast(
+        pid integer,
+        mid integer,
+        role varchar(200)
+    );
+
+MovieDirector(
+        did integer,
+        mid integer
+    );
+
+Cast stores the cast data i.e the actors who acted in each movie.
+
+pid - actor id
+mid - movie id
+role - role of the actor with id equal to pid in movie with id equal mid
+Similar to Cast, MovieDirector stores movie directors data i.e the directors for each movie
+
+# Tasks
+# Task 1
+Get list of all the actors who casted in all the movies having name starting with 'Annie'
+
+Q1="Write your query here"
+...
+
+# Output Format
+id|fname|lname|gender
+14252|Nuno|Antunes|M
+33403|Curtis|Bechdholt|M
+54193|Chris (I)|Bradford|M
+58118|Lenno|Britos|M
+58215|Michael (II)|Britton|M
+....
+# Task 2
+Get the top ranked movies directed by Biff Mailbu (i.e fname = "Biff" and lname = "Malibu") and released in the years (1999, 1994, 2003) in the descending order of rank and ascending order of year.
+
+...
+Q2="Write your query here"
+...
+# Output Format
+id|name|rank|year
+228066|Nasty Nymphos (1994)|9|1994
+# Task 3
+For each year find the no_of_movies released in that year. Select year for which average rank of all the movies in that year is greater than the average rank for all movies in the database. Your result should be in the ascending order of year.
+
+...
+Q3="Write your query here"
+...
+# Output Format
+year|no_of_movies
+1981|1430
+1982|353
+1983|372
+1984|403
+1985|439
+..........
+# Task 4
+Get the 10 movies released in the year 2001 whose rank is less than the average rank of all the movies released in that year, when ordered in the descending order of rank.
+
+...
+Q4="Write your query here"
+...
+
+# Output Format
+id|name|year|rank
+346246|Undercover X (2001)|2001|10
+302296|Simulacra (2001)|2001|9.7
+64230|Cinquantenaire du deuxime sexe, 1949-1999 (2001)|2001|9.4
+142881|Henry and Marvin (2001)|2001|9.4
+43908|Book of Blues (2001)|2001|9.1
+2290|32nd NAACP Image Awards (2001)|2001|9
+7032|Adventures of Mammary Man and Jugg Woman, The (2001)|2001|9
+10943|Aliento (2001)|2001|9
+19774|Arca, El (2001)|2001|9
+21955|Asian Street Hookers 22 (2001)|2001|9
+# Task 5
+Get 100 movies with male and female actors cast count when sorted in ascending order of id.
+
+...
+Q5="Write your query here"
+...
+# Output Format
+movie_id|no_of_female_actors|no_of_male_actors
+322|6|25
+351|1|3
+898|1|0
+961|0|2
+1356|3|6
+...
+# Task 6
+Get 100 distinct actor ids who are casted in the same movie for more than one role (different role name) when sorted in ascending order of actor id.
+
+...
+Q6="Write your query here"
+...
+# Output Format
+pid
+100123
+123123
+...
+# Task 7
+Find the number of directors with same first name (fname) in the database (consider fname if more than one director have the it).
+
+...
+Q7="Write your query here"
+...
+# Output Format
+fname|count
+Ethan|10
+...
+# Task 8
+Get all the directors who directed only movies having unique cast more than 100
+
+...
+Q8="Write your query here"
+...
+# Output Format
+id|fname|lname
+500|Marc F.|Adler
+843|Zoya|Akhtar
+1427|Michael|Almereyda
+2639|Jeff|Arch
+3641|Omar Abdel|Aziz
+............
+
+------------------------------------------------------------------------------------------------------------
+
+Assignment 12 :::
+
+
+Problem Statement
+A Student has name, age, score and student_id attributes, Where student_id value is unique for each student object.
+
+Student class for the above mentioned details:
+
+class Student:
+    def __init__(self, name, age, score):
+        self.name = name
+        self.student_id = None
+        self.age = age
+        self.score = score
+    ...
+
+
+In order to persist student details in the database. We need the following methods to create, retrieve, update and delete student data in the database.
+
+get
+save
+delete
+filter
+# Task1:
+Implement get method as mentioned in the above description. get method is used to retrieve a student from the database for a give condition and returns a Student object with the details retrieved from the database.
+
+# Data in Table
+student_id	name	age	score
+1	Raj	20	100
+2	Vivek	21	90
+3	Roshan	19	100
+# Example
+>>> student_object = Student.get(student_id=1)
+>>> student_object.student_id
+1
+>>> student_object.name
+Raj
+>>> student_object.age
+20
+>>> student_object.score
+100
+If there are no results that match the given condition, get() should raise DoesNotExist exception.
+# Example
+>>> student_object = Student.get(student_id=100)
+DoesNotExist:
+...
+If there are more than one student that match the given condition, get() should raise MultipleObjectsReturned exception.
+# Example
+>>> student_object = Student.get(score=100)
+MultipleObjectsReturned:
+...
+
+It should raise an InvalidField if you are trying to fetch student details using fields other than student_id, name, age and score.
+# Example
+>>> student_object = Student.get(some_random_field=100)
+InvalidField:
+...
+# Task2:
+Used to delete the given object from the database
+# Data in Table
+student_id	name	age	score
+1	Raj	20	100
+2	Vivek	21	90
+3	Roshan	19	100
+# Example
+>>> student_object = Student.get(student_id=1)
+>>> student_object.delete()
+# Data in Table
+student_id	name	age	score
+2	Vivek	21	90
+3	Roshan	19	100
+# Task3 - update:
+save method creates or updates a student object in database
+# Data in Table
+student_id	name	age	score
+1	Raj	20	100
+2	Vivek	21	90
+3	Roshan	19	100
+# Example
+>>> student_object = Student.get(student_id=1)
+>>> student_object.name = "Suresh"
+>>> student_object.save()
+# Data in Table
+student_id	name	age	score
+1	Suresh	20	100
+2	Vivek	21	90
+3	Roshan	19	100
+If you have noticed name of the entry in student table with student_id=1 is updated.
+# Task3 - create:
+create method can be used to create a new entry in the database.
+
+# Example
+>>> student_object = Student(name="Rajini", age=19, score=95)
+>>> student_object.save()
+# Data in Table
+student_id	name	age	score
+1	Suresh	20	100
+2	Vivek	21	90
+3	Roshan	19	100
+4	Rajini	19	95
+If you have noticed, a new entry in student table has been created.
+Saving and already existing object in database shouldn't create a new entry in database.
+# Example
+>>> student_object = Student.get(student_id=4)
+>>> student_object.save()
+The above code doesn't create an entry in the database.
+# Learning Material
+Sample python snippets to execute SQL queries.
+def write_data(sql_query):
+	import sqlite3
+	connection = sqlite3.connect("db.sqlite3")
+	crsr = connection.cursor() 
+	crsr.execute("PRAGMA foreign_keys=on;") 
+	crsr.execute(sql_query) 
+	connection.commit() 
+	connection.close()
+
+def read_data(sql_query):
+	import sqlite3
+	connection = sqlite3.connect("db.sqlite3")
+	crsr = connection.cursor() 
+	crsr.execute(sql_query) 
+	ans= crsr.fetchall()  
+	connection.close() 
+	return ans
+
+Reference to access sqlite3 database using python.
+Note: Test cases for your submissions are executed on students.sqlite3 database with Student table created using the below SQL query.
+
+CREATE TABLE Student (
+    student_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name VARCHAR(250),
+    age INT,
+    score INT
+);
+
+
+
+
