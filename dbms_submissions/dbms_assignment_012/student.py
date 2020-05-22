@@ -55,6 +55,11 @@ class Student:
         if self.student_id == None:
             crsr.execute("INSERT INTO student VALUES (:student_id,:name,:age,:score)",{'student_id':self.student_id,'name':self.name,'age':self.age,'score':self.score}) 
             self.student_id = crsr.lastrowid
+            
+        elif ("SELECT {} Not in (SELECT student_id FROM student)".format(self.student_id)):
+            crsr.execute("INSERT or REPLACE INTO student VALUES (:student_id,:name,:age,:score)",{'student_id':self.student_id,'name':self.name,'age':self.age,'score':self.score}) 
+            self.student_id = crsr.lastrowid
+            
         else:
             crsr.execute(f"UPDATE student SET name = \'{self.name}\',age = {self.age},score = {self.score} WHERE student_id = {self.student_id}")
         connection.commit() 
