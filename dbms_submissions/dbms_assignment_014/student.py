@@ -20,25 +20,6 @@ class Student:
             self.name,
             self.age,
             self.score)
-    @classmethod
-    def get(cls,**keys):
-        for k,v in keys.items():
-            cls.k = k
-            cls.v = v
-        
-        if k not in ('student_id','name','age','score'):
-            raise InvalidField
-        
-        sql_query = "SELECT * FROM Student WHERE {} = '{}'".format(cls.k,cls.v)
-        k = read_data(sql_query)        
-        if(len(k)==0):
-            raise DoesNotExist
-        elif (len(k)>1):
-            raise MultipleObjectsReturned
-        else:    
-            b=Student(k[0][1],k[0][2],k[0][3])
-            b.student_id=k[0][0]
-            return b
     
     @classmethod
     def filter(cls,**kwargs):
@@ -71,38 +52,18 @@ class Student:
         return k
             
               
-              
-    
-            
-            
-    def save(self):
-        import sqlite3
-        connection = sqlite3.connect("students.sqlite3")
-        crsr = connection.cursor()
-        if self.student_id == None:
-            crsr.execute("INSERT INTO Student VALUES (:student_id,:name,:age,:score)",{'student_id':self.student_id,'name':self.name,'age':self.age,'score':self.score}) 
-            self.student_id = crsr.lastrowid
-            
-        elif ("SELECT {} Not in (SELECT student_id FROM student)".format(self.student_id)):
-            crsr.execute("INSERT or REPLACE INTO Student VALUES (:student_id,:name,:age,:score)",{'student_id':self.student_id,'name':self.name,'age':self.age,'score':self.score}) 
-            self.student_id = crsr.lastrowid
-            
-        else:
-            crsr.execute(f"UPDATE Student SET name = \'{self.name}\',age = {self.age},score = {self.score} WHERE student_id = {self.student_id}")
-        connection.commit() 
-    
     @classmethod    
-    def avg(cls,field,**kwargs):
+    def aggregate(cls,method,field,**kwargs):
         #print(len(kwargs))
         if field not in ('student_id','name','age','score'):
                 raise InvalidField
             
         if len(kwargs) == 0:
-            sql_query = ("SELECT AVG({}) FROM Student".format(field))
+            sql_query = ("SELECT {}({}) FROM Student".format(method,field))
         else:
             print(kwargs)
             j = Student.filter(**kwargs)
-            sql_query = ("SELECT AVG({}) FROM Student WHERE {}".format(field,j))
+            sql_query = ("SELECT {}({}) FROM Student WHERE {}".format(method,field,j))
         r = read_data(sql_query)
         #print(r)
         for i in r:
@@ -111,19 +72,15 @@ class Student:
     @classmethod    
     def max(cls,field,**kwargs):
         #print(len(kwargs))
-        if field not in ('student_id','name','age','score'):
-                raise InvalidField
-            
-        if len(kwargs) == 0:
-            sql_query = ("SELECT MAX({}) FROM Student".format(field))
-        else:
-            print(kwargs)
-            j = Student.filter(**kwargs)
-            sql_query = ("SELECT MAX({}) FROM Student WHERE {}".format(field,j))
-        r = read_data(sql_query)
-        #print(r)
-        for i in r:
-            return i[0]
+        k = Student.aggregate("max",field,**kwargs)
+        return k
+    
+    @classmethod    
+    def avg(cls,field,**kwargs):
+        #print(len(kwargs))
+        k = Student.aggregate("AVG",field,**kwargs)
+        return k
+    
             
     @classmethod    
     def min(cls,field,**kwargs):
@@ -179,12 +136,7 @@ class Student:
         for i in r:
             return i[0]
     
-    
-        
-    def delete(self):
-    	sql_query = ("DELETE FROM Student WHERE student_id = {}".format(self.student_id)) 
-    	write_data(sql_query)
-    
+
 def write_data(sql_query):
         import sqlite3
         connection = sqlite3.connect("students.sqlite3")

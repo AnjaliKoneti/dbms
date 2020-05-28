@@ -40,56 +40,42 @@ class Student:
             b.student_id=k[0][0]
             return b
     
+    
+    
     @classmethod
-    def filter(cls,**keys):
-        
-        for k,v in keys.items():
+    def filter(cls,**kwargs):
+        l = []
+        cls.dict = {'gt':'>','lt':'<','gte':'>=','lte':'<=','neq':'<>'}
+        for k,v in kwargs.items():
             cls.k = k
             cls.v = v
-        
             p = k.split('__')
             if p[0] not in ('student_id','name','age','score'):
                 raise InvalidField
                 
-            if k in ('student_id','name','age','score'):
-                l = read_data("SELECT * FROM Student WHERE {} = '{}'".format(cls.k,cls.v))
-                    
-            elif p[1] == 'gt':
-                sql_query = "SELECT * FROM Student WHERE {} > '{}'".format(p[0],cls.v)
-                l = read_data(sql_query)   
-                            
-            elif p[1] == 'lt':
-                sql_query = "SELECT * FROM Student WHERE {} <'{}'".format(p[0],cls.v)
-                l = read_data(sql_query)   
-                            
-            elif p[1] == 'gte':
-                sql_query = "SELECT * FROM Student WHERE {} >= '{}'".format(p[0],cls.v)
-                l = read_data(sql_query) 
-                                
-            elif p[1] == 'lte':
-                sql_query = "SELECT * FROM Student WHERE {} <= '{}'".format(p[0],cls.v)
-                l = read_data(sql_query) 
-                                
-            elif p[1] == 'neq':
-                sql_query = "SELECT * FROM Student WHERE {} <> '{}'".format(p[0],cls.v)
-                l = read_data(sql_query) 
-                            
+            if len(p) == 1:
+                sql_query = "{} = '{}'".format(cls.k,cls.v)
+            
             elif p[1] == 'in':
                 j = tuple(cls.v)
-                sql_query = "SELECT * FROM Student WHERE {} in {}".format(p[0],j)
-                l = read_data(sql_query) 
-                                
+                sql_query = "{} {} {}".format(p[0],p[1],j)
+                
             elif p[1] == 'contains':
-                sql_query = "SELECT * FROM Student WHERE {} LIKE \'%{}%\'".format(p[0],cls.v)
-                l = read_data(sql_query) 
-            if len(l) == 0:
-                return []
+                sql_query = "{} LIKE '%{}%'".format(p[0],cls.v)
+            
             else:
-                out=[]            
-                for i in l:
-                    b=Student(i[1],i[2],i[3])
-                    b.student_id=i[0]
-                    out.append(b)
+                sql_query = "{} {} '{}'".format(p[0],cls.dict[p[1]],cls.v)
+                
+            l.append(sql_query)
+            k = " and ".join(l)
+            q = 'SELECT * FROM Student WHERE '+k
+        #print(k)
+        p = read_data(q)    
+        out=[]            
+        for i in p:
+            b=Student(i[1],i[2],i[3])
+            b.student_id=i[0]
+            out.append(b)
         return out
             
             
